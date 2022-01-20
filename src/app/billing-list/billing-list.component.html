@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-xs-10">
+      <ul class="list-group">
+        <table>
+            <tr>
+                <th width="100"><label for="srno">Sr. Number</label></th>
+                <th width="100"><label for="name">Name</label></th>
+                <th width="100"><label for="amount">Quantity</label></th>
+                <th width="150"><label for="price">Price</label></th>
+                <th width="100"><label for="total">Sub Total</label></th>
+            </tr>
+        </table>
+            <a
+              class="list-group-item"
+              style="cursor: pointer"
+              *ngFor="let item of items; let i = index"
+              (click)="onEditItem(i)">
+            <table>
+                <tr>
+                <!-- <a
+              class="list-group-item"
+              style="cursor: pointer"
+              *ngFor="let item of items; let i = index"
+              (click)="onEditItem(i)" -->
+            >
+                    <td width="120">{{ i+1 }} </td>
+                    <td width="120">{{ item.name }} </td>
+                    <td width="120">{{ item.quantity }}</td>
+                    <td width="120">{{ item.price }}</td>
+                    <td width="120">{{ item.total }}</td>
+                    <br>
+
+    
+                </tr>
+            </table>
+        </a>
+        </ul>    
+        <hr>  
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-primary" type="button" (click)="onGrandTotal()">CALCULATE GRAND TOTAL</button>
+          </div>
+        </div>
+
+
+        <!-- <a *ngFor="let item of items; let i = index">
+            <p>Grand Total = {{ item.grandTotalValue }}</p>
+        </a> -->
+
+        <p *ngIf="this.clickedHere">GRAND TOTAL = {{this.finalAnswer}}</p>
+
+        <app-billing-edit></app-billing-edit>  
+    </div>
+  </div>
+  

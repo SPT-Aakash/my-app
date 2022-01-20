@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-xs-12">
+      <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+        <div>
+            <!-- <div class="col-sm-5 form-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    name="name"
+                    ngModel
+                    required
+                    pattern="[a-zA-Z ]*">
+                    </div>
+            
+            <div class="col-sm-5 form-group">
+                <label for="quantity">Quantity</label>
+                <input
+                        type="number"
+                        id="quantity"
+                        class="form-control"
+                        name="quantity"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$">
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="price">Price</label>
+                <input
+                        type="text"
+                        id="price"
+                        class="form-control"
+                        name="price"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$">
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="total">Total</label>
+                <input
+                        type="text"
+                        id="total"
+                        class="form-control"
+                        name="total"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$">
+            </div> -->
+
+          <table>
+              <tr>
+                  <th><label for="name">Name</label></th>
+                  <th><label for="quantity">Quantity</label></th>
+                  <th><label for="price">Price</label></th>
+              </tr>
+              <tr>
+                  <td><input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    name="name"
+                    ngModel
+                    required
+                    pattern="[a-zA-Z ]*"></td>
+                    <td><input
+                        maxlength="10"
+                        type="number"
+                        id="quantity"
+                        class="form-control"
+                        name="quantity"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$"></td>
+                    <td><input
+                        type="text"
+                        id="price"
+                        class="form-control"
+                        name="price"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$"></td>
+              </tr>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="button" type="submit" [disabled]="!f.valid"  >Add</button>
+            <button class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
+            <button class="btn btn-primary" type="button" (click)="onCLear()">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
